@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# GitHub Profile Search React.js App
+
+App uses React.js Hooks, Bootstrap and GitHub API to search for GitHub users profiles:
+
+![GitHub Profile Page](https://user-images.githubusercontent.com/26218291/133908382-efa8b36a-0d13-4d1e-a66d-b590875cae3f.png)
+
+
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
