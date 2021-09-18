@@ -27,28 +27,34 @@ export const Profile = ({match}) => {
                 <div className="card-body">
                     <div className="row">
 
-                        <div className="col-sm-3 text-center">
-                            <img src={avatar_url} alt={name} style={{width: "150px"}}/>
-                            <h2>{name}</h2>
-                            {location && <p>Location: {location}</p>}
+                        <div className="col-sm-4 text-center">
+                            <img className="rounded mx-auto d-block" src={avatar_url} alt={name}
+                                 style={{width: "190px"}}/>
                         </div>
 
                         <div className="col">
-                            {bio && <><h3>BIO</h3><p>{bio}</p></>}
+                                <h3>{name}</h3>
+                                {bio && <p style={{marginTop: ".5em", marginBottom: ".5em"}}>{bio}</p>}
+
+                                <div className="d-flex justify-content-start py-1">
+                                    <span className="badge bg-primary me-2">Followers: {followers}</span>
+                                    <span className="badge bg-dark me-2">Follows: {following}</span>
+                                    <span className="badge bg-primary me-2">Repositories: {public_repos}</span>
+                                    <span className="badge bg-dark me-2">Gists: {public_gists}</span>
+                                </div>
+
+                                <ul className="px-1" style={{listStyle: "none"}}>
+                                    {login && <li><strong>Username: </strong>{login}</li>}
+                                    {company && <li><strong>Company: </strong>{company}</li>}
+                                    {location && <li><strong>Location: </strong>{location}</li>}
+                                    {blog && <li>
+                                        <strong>Website: </strong>
+                                        <a href={html_url} target="_blank" rel="noreferrer">{blog}</a>
+                                    </li>}
+                                </ul>
                         </div>
 
-                        <a href={html_url} target="_blank" rel="noreferrer" className="btn btn-dark">Open profile</a>
-
-                        <ul>
-                            {login && <li><strong>Username: </strong>{login}</li>}
-                            {company && <li><strong>Company: </strong>{company}</li>}
-                            {blog && <li><strong>Website: </strong>{blog}</li>}
-                        </ul>
-
-                        <div className="badge badge-primary">Followers: {followers}</div>
-                        <div className="badge badge-success">Follows: {following}</div>
-                        <div className="badge badge-info">Repositories: {public_repos}</div>
-                        <div className="badge badge-dark">Gists: {public_gists}</div>
+                        <a href={html_url} target="_blank" rel="noreferrer" className="btn btn-dark mb-4">Open profile</a>
 
                         <Repos repos={repos}/>
 
